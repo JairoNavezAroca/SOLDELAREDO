@@ -168,11 +168,11 @@
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li>
-                      <a href="javascript:;">
-                        <span>Settings</span>
+                      <a href="Usuario_ConfigurarCuenta.php">
+                        <span>Mi Cuenta</span>
                       </a>
                     </li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="../controlador/Usuario_Salir.php">Cerrar Sesion</a></li>
                   </ul>
                 </li>
               </ul>
