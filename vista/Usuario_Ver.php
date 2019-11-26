@@ -39,7 +39,10 @@
 								<th width="15%">Id Usuario</th>
 								<th>Apellidos</th>
 								<th>Nombres</th>
+								<th>Area</th>
 								<th>Email</th>
+								<th>Estado</th>
+								<th>Opcion</th>
 							</tr>
 						</thead>
 						<tbody> 
@@ -48,10 +51,23 @@
 							?>
 							<?php foreach ($u as $item):?>
 								<tr>
+									<?php 
+										$est = 'Deshabilitado';
+										if ($item->Estado == 1)
+											$est = 'Habilitado';
+									 ?>
 									<th><?php echo $item->IdUsuario ?></th>
 									<th><?php echo $item->Apellidos ?></th>
 									<th><?php echo $item->Nombres ?></th>
+									<th><?php echo $item->Area ?></th>
 									<th><?php echo $item->Email ?></th>
+									<th><?php echo $est ?></th>
+									<?php if ($item->Estado == 1){ ?>
+										<th><a href="../controlador/Usuario_Deshabilitar.php?IdUsuario=<?php echo $item->IdUsuario ?>">Deshabilitar</a></th>
+									<?php } ?>
+									<?php if ($item->Estado == 0) { ?>
+										<th><a href="../controlador/Usuario_Habilitar.php?IdUsuario=<?php echo $item->IdUsuario ?>">Habilitar</a></th>
+									<?php } ?>
 									<!--
 									<th>
 										<a href="Usuario_Editor.php?id=<?php echo $item->IdUsuario ?>">Ver</a>

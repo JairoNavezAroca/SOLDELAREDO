@@ -100,6 +100,24 @@
 			</div>
 			<div class="col-md-2 col-sm-1 col-xs-1"></div>
 		</div>
+		<br>
+		<!-- Area -->
+		<div class="row">
+			<div class="col-md-2 col-sm-1 col-xs-1"></div>
+			<div class="col-md-3 col-sm-4 col-xs-4">
+				<div class="text-center">Area</div>
+			</div>
+			<div class="col-md-5 col-sm-6 col-xs-6">
+				<select class="form-control" name="Area">
+					<option value="Gerencia">Gerencia</option>
+					<option value="Produccion">Produccion</option>
+					<option value="Procesos">Procesos</option>
+					<option value="Productividad">Productividad</option>
+					<option value="Personal">Personal</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-sm-1 col-xs-1"></div>
+		</div>
 		<br><br>
 		<center>
 			<input type="submit" class="btn btn-primary" value="Registrar" value="Registrar" required="">
