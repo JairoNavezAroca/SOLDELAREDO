@@ -67,6 +67,7 @@
                       </li>
                       <li><a href="vista/modelado.php">Modelado de Procesos</a></li>
                       <li><a href="vista/orden.php">Orden de implementación</a></li>
+                      <li><a href="vista/listadeprocesos.php">Historial de pocesos</a></li>
                     </ul>
                   </li>
 <!--MODIFICADO-->                  

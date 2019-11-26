@@ -67,6 +67,7 @@
                       </li>
                       <li><a href="modelado.php">Modelado de Procesos</a></li>
                       <li><a href="orden.php">Orden de implementación</a></li>
+                      <li><a href="listadeprocesos.php">Historial de pocesos</a></li>
                     </ul>
                   </li>
 <!--MODIFICADO-->                  
