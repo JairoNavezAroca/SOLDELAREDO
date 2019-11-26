@@ -1,0 +1,35 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://www.jqueryscript.net/demo/Export-Html-To-Word-Document-With-Images-Using-jQuery-Word-Export-Plugin/FileSaver.js"></script>
+<script src="https://www.jqueryscript.net/demo/Export-Html-To-Word-Document-With-Images-Using-jQuery-Word-Export-Plugin/jquery.wordexport.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$("a.word-export").click(function(event)      {
+			$("#page-content").wordExport();
+		});
+	});
+</script> 
+<a class="word-export" href="#" id="clc">Click me</a>
+
+<div id="page-content">hello world
+	<table class='table' style="background-color: white">
+		<tr>
+			<td rowspan="2">Proceso</td>
+			<td>Subproceso</td>
+			<td>area 1</td>
+			<td>area 2</td>
+			<td>area 51</td>
+		</tr>
+		<tr>
+			<td>dadadasdasdasd</td>
+			<td>area 1</td>
+			<td>asdads 2</td>
+			<td>24353453534535</td>
+		</tr>
+	</table>
+</div>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$("#clc").click();
+	});
+</script>
