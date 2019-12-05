@@ -114,7 +114,7 @@ $(document).ready(function(){
         console.log(postData);
         const url = '../controlador/orden.php';
         $.post(url, postData, (response) => {
-          alert(response);
+          swal(response);
           $('#frmOrden').trigger('reset');
           verOrden();
           fecha();
@@ -130,7 +130,7 @@ $(document).ready(function(){
         let idorden = $(element).attr('idorden');
         let accion = 'eliminar';
         $.post('../controlador/orden.php', {idorden,accion},(response) => {
-          alert(response);
+          swal(response);
           verOrden();
         });
       }

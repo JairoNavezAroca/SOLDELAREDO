@@ -121,7 +121,7 @@ $(document).ready(function(){
         };
         const url = '../controlador/planmejoraprocesos.php';
         $.post(url, postData, (response) => {
-          alert(response);
+          swal(response);
           $('#frmPlanprocesos').trigger('reset');
           mejoras();
           fecha();
@@ -137,7 +137,7 @@ $(document).ready(function(){
         let idmejora = $(element).attr('idmejora');
         let accion = 'eliminar';
         $.post('../controlador/planmejoraprocesos.php', {idmejora,accion},(response) => {
-          alert(response);
+          swal(response);
           mejoras();
         });
       }
