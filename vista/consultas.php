@@ -57,7 +57,7 @@
  			function ListarAsistencias($inicio,$fin){
  			abrirConexion();
  			global $conexion;
- 			$sql=mysqli_query($conexion,"SELECT * FROM asistencias where fecha between '$inicio' and '$fin' order by fecha asc");
+ 			 			$sql=mysqli_query($conexion,"SELECT * FROM asistencias where fecha between '$inicio' and '$fin' order by fecha asc");
  			return $sql->fetch_all();
  		}
  			function ListarCapacitaciones($idarea){

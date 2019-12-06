@@ -6,7 +6,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-9 col-sm-9 col-xs-12">
-            <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" id="oportunidad">
+            <input class="date-picker form-control col-md-7 col-xs-12" onkeypress="return soloLetras(event)" required="required" type="text" id="oportunidad">
         </div>
         <div class="col-md-3 col-sm-3 col-xs-12">
             <button class="btn btn-success" type="button" id="registrarOportunidad" onclick="registrarOpor()"><i class="fa fa-save"></i> Registrar</button>

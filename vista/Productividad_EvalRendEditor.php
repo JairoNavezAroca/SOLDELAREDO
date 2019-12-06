@@ -35,6 +35,22 @@
 	<br>
 	<h1 class="text-center">Registrar / Editar Evaluación de Rendimiento</h1>
 	<br>
+
+    <?php if(isset($_SESSION['error'])){ ?>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="alert alert-danger">
+          <center>
+            <p><?php echo $_SESSION['error'] ?></p>
+          </center>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+    <?php } ?>
+    <?php unset($_SESSION['error']) ?>
+
 	<form action="../controlador/Productividad_EvalRendEditor.php" method="post">
 		<!-- IdEvRendimiento -->
 		<div class="row" hidden>
@@ -78,7 +94,7 @@
 			<div class="col-md-1 col-sm-1 col-xs-1"></div>
 			<div class="col-md-10 col-sm-10 col-xs-10">
 				<div class="text-center">Resultado(Porcentaje)</div>
-				<input type="number" class="form-control" name="Porcentaje" placeholder="%" min="0" max="100" pattern="^\d*(\.\d{0,1})?$" step="0.1" value="<?php echo $der->Porcentaje ?>">
+				<input type="number" class="form-control" name="Porcentaje" placeholder="%" min="0" max="100" pattern="^\d*(\.\d{0,1})?$" step="0.1" value="<?php echo $der->Porcentaje ?>" required>
 			</div>
 			<div class="col-md-1 col-sm-1 col-xs-1"></div>
 		</div>

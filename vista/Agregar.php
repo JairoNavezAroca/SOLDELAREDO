@@ -29,7 +29,7 @@
 				  	<div class="col-md-2"></div>
 				    <div class="col-md-8" align="center">
 				      <label for="inputEmail4">DNI</label>
-				      <input type="text" class="form-control" name="dni" id="dni" placeholder="DNI">
+				     <input type="text"  required name="dni" id="dni" minlength="8" maxlength="8" pattern="[0-9]+" class="form-control" placeholder="DNI">
 				    </div>
 				  	<div class="col-md-2"></div>
 				  </div>
@@ -37,11 +37,11 @@
 				  	<div class="col-md-2"></div>
 				    <div class="col-md-4">
 				      <label for="inputEmail4">NOMBRES</label>
-				      <input type="text" class="form-control" name="nombre" id="nombre" placeholder="First Name">
+				      <input type="text" required name="nombre" class="form-control" id="nombre" pattern="[A-Za-z\sáéíóú]+" minlength="3"  placeholder="First Name">
 				    </div>
 				    <div class="col-md-4">
 				      <label for="inputPassword4">APELLIDOS</label>
-				      <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Last Name">
+				      <input type="text"  required name="apellido" id="apellido" minlength="5" pattern="[A-Za-z\sáéíóú]+" placeholder="Last Name" class="form-control">
 				    </div>
 				  	<div class="col-md-2"></div>
 				  </div>
@@ -56,7 +56,7 @@
 				    </div>
 				    <div class="col-md-4">
 				      <label for="inputPassword4">SALARIO</label>
-				      <input type="number" step="any" class="form-control" name="salario" id="Salario" placeholder="Salario">
+				      <input type="text" step="any" class="form-control" required name="salario" id="Salario" pattern="^[+]?[0-9]{1,9}(?:\.[0-9]{1,2})" placeholder="Salario">
 				    </div>
 				  	<div class="col-md-2"></div>
 				  </div>
@@ -81,13 +81,14 @@
                   		<div class="col-md-4">
                   			<label for="from">Inicio de Contrato</label>
                   		 	<div class="input-group date mo-date">
-						  		<input type="date" class="form-control" name="inicioC" id="inicioC"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+						  		<input type="date" class="form-control" name="inicioC" id="inicioC" min="2019-12-01" max="2019-12-31"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
 							</div>
                   		</div>
                   		<div class="col-md-4">
 					  		<label for="from">Fin de Contrato</label>
 					     	<div class="input-group date mo-date">
-								<input type="date" class="form-control" name="finC" id="finC" ><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+								<input type="date" class="form-control" name="inicioC" id="inicioC" min="2020-01-01"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+
 							</div>
                   		</div>
 				  		<div class="col-md-2"></div>

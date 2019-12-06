@@ -14,18 +14,18 @@
                 <form class="form-horizontal form-label-left input_mask">
                   <div class="form-group">
                     <div class="col-md-3 col-sm-3 col-xs-12 has-feedback">
-                      <input type="text" class="form-control" id="area" placeholder="AREA">
+                      <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="area" placeholder="AREA">
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12 has-feedback">
-                      <input type="text" class="form-control" id="tipo" placeholder="TIPO">
+                      <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="tipo" placeholder="TIPO">
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-12 has-feedback">
-                      <input type="text" class="form-control" id="titulo" placeholder="TITULO">
+                      <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="titulo" placeholder="TITULO">
                     </div>
                   </div>
                   <div class="form-group">
                     <div class="col-md-5 col-sm-5 col-xs-12 has-feedback">
-                      <input type="text" class="form-control" id="descripcion" placeholder="DESCRIPCION">
+                      <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="descripcion" placeholder="DESCRIPCION">
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12 has-feedback" id="selectProy">
                       <select class="select2_single form-control" tabindex="-1" name="" id="idProyecto">

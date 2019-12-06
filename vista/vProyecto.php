@@ -19,7 +19,7 @@
                       <input type="text" class="form-control" id="añoFin" placeholder="AÑO FIN">
                     </div>
                     <div class="col-md-5 col-sm-5 col-xs-12 has-feedback">
-                      <input type="text" class="form-control" id="descripcion" placeholder="PROYECTO">
+                      <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="descripcion" placeholder="PROYECTO">
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12 has-feedback">
                       <button type="reset" class="btn btn-secondary"><i class="fa fa-paint-brush"></i> Limpiar</button>

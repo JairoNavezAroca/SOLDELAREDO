@@ -14,10 +14,10 @@
                   <form class="form-horizontal form-label-left input_mask">
                     <div class="form-group">
                         <div class="col-md-5 col-sm-5 col-xs-12 has-feedback">
-                            <input type="text" class="form-control" id="descripcion" placeholder="ACTIVIDAD">
+                            <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="descripcion" placeholder="ACTIVIDAD">
                         </div>
                         <div class="col-md-5 col-sm-5 col-xs-12 has-feedback">
-                            <input type="text" class="form-control" id="equipo" placeholder="AREA">
+                            <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="equipo" placeholder="AREA">
                         </div>
                     </div>
                     <div class="form-group">
@@ -25,7 +25,7 @@
                             <input type="text" class="form-control" id="duracion" placeholder="TIEMPO">
                         </div>
                         <div class="col-md-5 col-sm-5 col-xs-12 has-feedback">
-                            <input type="text" class="form-control" id="subtareas" placeholder="SUBTAREAS">
+                            <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="subtareas" placeholder="SUBTAREAS">
                         </div>
                     </div>
                     <div class="form-group">

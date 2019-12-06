@@ -16,25 +16,25 @@
                   <div class="form-group">
                     <label class="col-md-1 col-sm-1 col-xs-12">Mision </label>
                     <div class="col-md-11 col-sm-11 col-xs-12">
-                      <input type="text" class="form-control" id="mision" value="<?php if($datos[0][1])echo $datos[0][1]; else echo ""?>">
+                      <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="mision" value="<?php if($datos[0][1])echo $datos[0][1]; else echo ""?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-1 col-sm-1 col-xs-12" >Vision </label>
                     <div class="col-md-11 col-sm-11 col-xs-12">
-                      <input type="text" class="form-control" id="vision" value="<?php if($datos[0][2])echo $datos[0][2]; else echo ""?>">
+                      <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="vision" value="<?php if($datos[0][2])echo $datos[0][2]; else echo ""?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-2 col-sm-1 col-xs-12">Propuesta de Valor </label>
                     <div class="col-md-10 col-sm-11 col-xs-12">
-                      <input type="text" class="form-control" id="valor" value="<?php if($datos[0][3])echo $datos[0][3]; else echo ""?>">
+                      <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="valor" value="<?php if($datos[0][3])echo $datos[0][3]; else echo ""?>">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-2 col-sm-1 col-xs-12" >Factor Diferenciador </label>
                     <div class="col-md-10 col-sm-11 col-xs-12">
-                      <input class="date-picker form-control col-md-7 col-xs-12"  type="text" id="factor" value="<?php if($datos[0][4])echo $datos[0][4]; else echo ""?>">
+                      <input class="date-picker form-control col-md-7 col-xs-12"  type="text" onkeypress="return soloLetras(event)" id="factor" value="<?php if($datos[0][4])echo $datos[0][4]; else echo ""?>">
                     </div>
                   </div>
                   <div class="form-group">

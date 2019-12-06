@@ -57,11 +57,11 @@ function verFODA(){
 
 function registrarFODA(){
     var annio = $("#annio").val();
-    if(annio===""){
+    if(annio==="" || /^\s+$/.test(annio)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
-    if(isNaN(annio) && annio.length!=4){
+    if(isNaN(annio) || annio.length!=4 || parseInt(annio,10)<2015 || parseInt(annio,10)>2030){
         swal("Año invalido");
         return false;
     }
@@ -90,6 +90,27 @@ function registrarFODA(){
         }
     });
 }
+
+
+function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " abcdefghijklmnñopqrstuvwxyz";
+       numeros=" 0123456789";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && numeros.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
 
 $(document).on('click','.agregarElementos', function(){
     const element = $(this)[0].parentElement.parentElement;
@@ -141,7 +162,7 @@ function registrarFort(){
     var idFoda,fortaleza;
     fortaleza=$("#fortaleza").val();
     idFoda = getQueryVariable('idFoda');
-    if(fortaleza===""){
+    if(fortaleza==="" || /^\s+$/.test(fortaleza)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -177,7 +198,7 @@ function registrarDeb(){
     var idFoda,debilidad;
     debilidad=$("#debilidad").val();
     idFoda = getQueryVariable('idFoda');
-    if(debilidad===""){
+    if(debilidad==="" || /^\s+$/.test(debilidad)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -213,7 +234,7 @@ function registrarOpor(){
     var idFoda,oportunidad;
     oportunidad=$("#oportunidad").val();
     idFoda = getQueryVariable('idFoda');
-    if(oportunidad===""){
+    if(oportunidad==="" || /^\s+$/.test(oportunidad)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -249,7 +270,7 @@ function registrarAmen(){
     var idFoda,amenaza;
     amenaza=$("#amenaza").val();
     idFoda = getQueryVariable('idFoda');
-    if(amenaza===""){
+    if(amenaza==="" || /^\s+$/.test(amenaza)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -365,7 +386,7 @@ function actualizarFort(){
     var idFortaleza,fortaleza;
     fortaleza=$("#fortaleza").val();
     idFortaleza = $("#tablaFortaleza").val();
-    if(fortaleza===""){
+    if(fortaleza==="" || /^\s+$/.test(fortaleza)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -401,7 +422,7 @@ function actualizarDeb(){
     var idDebilidad,debilidad;
     debilidad=$("#debilidad").val();
     idDebilidad = $("#tablaDebilidad").val();
-    if(debilidad===""){
+    if(debilidad==="" || /^\s+$/.test(debilidad)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -437,7 +458,7 @@ function actualizarOpor(){
     var idOportunidad,oportunidad;
     oportunidad=$("#oportunidad").val();
     idOportunidad = $("#tablaOportunidad").val();
-    if(oportunidad===""){
+    if(oportunidad==="" || /^\s+$/.test(oportunidad)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -473,7 +494,7 @@ function actualizarAmen(){
     var idAmenaza,amenaza;
     amenaza=$("#amenaza").val();
     idAmenaza = $("#tablaAmenaza").val();
-    if(amenaza===""){
+    if(amenaza==="" || /^\s+$/.test(amenaza)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -628,6 +649,10 @@ function registrarEFO(){
       fortalezas[i]= $(this).val();
       i++;
     });
+    if(eFO==="" || /^\s+$/.test(eFO)){
+        swal("No puede estar vacío");
+        return false;
+    }
     if(fortalezas.length==0){
       swal("Debe relacionar fortalezas");
       return false;
@@ -677,6 +702,10 @@ function registrarEFA(){
       fortalezas[i]= $(this).val();
       i++;
     });
+    if(eFA==="" || /^\s+$/.test(eFA)){
+        swal("No puede estar vacío");
+        return false;
+    }
     if(fortalezas.length==0){
       swal("Debe relacionar fortalezas");
       return false;
@@ -726,6 +755,10 @@ function registrarEDO(){
         debilidades[i]= $(this).val();
       i++;
     });
+    if(eDO==="" || /^\s+$/.test(eDO)){
+        swal("No puede estar vacío");
+        return false;
+    }
     if(debilidades.length==0){
       swal("Debe relacionar debilidades");
       return false;
@@ -775,6 +808,10 @@ function registrarEDA(){
         debilidades[i]= $(this).val();
       i++;
     });
+    if(eDA==="" || /^\s+$/.test(eDA)){
+        swal("No puede estar vacío");
+        return false;
+    }
     if(debilidades.length==0){
       swal("Debe relacionar debilidades");
       return false;
@@ -909,7 +946,7 @@ function actualizarEFO(){
     var eFO,idEstrategiaFO;
     eFO=$("#efo").val();
     idEstrategiaFO = $("#idEfo").val();
-    if(eFO===""){
+    if(eFO==="" || /^\s+$/.test(eFO)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -949,7 +986,7 @@ function actualizarEFA(){
     var eFA,idEstrategiaFA;
     eFA=$("#eFA").val();
     idEstrategiaFA = $("#idEfa").val();
-    if(eFA===""){
+    if(eFA==="" || /^\s+$/.test(eFA)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -989,7 +1026,7 @@ function actualizarEDO(){
     var eDO,idEstrategiaDO;
     eDO=$("#eDO").val();
     idEstrategiaDO = $("#idEdo").val();
-    if(eDO===""){
+    if(eDO==="" || /^\s+$/.test(eDO)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -1029,7 +1066,7 @@ function actualizarEDA(){
     var eDA,idEstrategiaDA;
     eDA=$("#eDA").val();
     idEstrategiaDA = $("#idEda").val();
-    if(eDA===""){
+    if(eDA==="" || /^\s+$/.test(eDA)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }

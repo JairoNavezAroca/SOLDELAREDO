@@ -108,6 +108,11 @@ function registrarInsPed(){
         swal("Cantidad inválida");
         return false;
     }
+    if(cantidadInsumo<0){
+        swal("La cantidad no puede ser negativa");
+        return false;
+    }
+
     $.ajax({
         url: "../controlador/cPedido.php",
         type: "POST",
@@ -205,6 +210,25 @@ $(document).on('click','.detallePedido', function(){
     var numero = $(element).attr('numero');
     window.location.href="vDetallePedido.php?numero="+numero;
 });
+
+function soloLetras(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " abcdefghijklmnñopqrstuvwxyz";
+    especiales = "8-37-39-46";
+
+    tecla_especial = false
+    for(var i in especiales){
+         if(key == especiales[i]){
+             tecla_especial = true;
+             break;
+         }
+     }
+
+     if(letras.indexOf(tecla)==-1 && !tecla_especial){
+         return false;
+     }
+ }
 
 function getQueryVariable(variable) {
     var query = window.location.search.substring(1);

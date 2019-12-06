@@ -19,7 +19,7 @@
 		                  	<input type="hidden" value="<?php echo $_GET['idtarea'] ?>" id="idtarea">
 
 				            <form id="frmActividad" class="form-horizontal form-label-left">
-				              <div class="form-group"">
+				              <div class="form-group">
 				                   <label class="control-label col-md-4 col-sm-3 col-xs-12">Actividad*</label>
 				                   <div class="col-md-4 col-sm-4 col-xs-12">
 				                     <input type="text" id="actividad" required pattern="^[a-z A-Z]+$" class="form-control col-md-7 col-xs-12">

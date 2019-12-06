@@ -20,7 +20,7 @@
 					  <div class="form-row">
 					    <div class="form-group col-md-6">
 					      <label for="inputEmail4">EMPRESA O CAPACITADOR</label>
-					      <input type="text" class="form-control" name="empresa" id="empresa" >
+					      <input type="text" class="form-control" required name="empresa" pattern="[A-Za-z\sáéíóú]+" id="empresa" >
 					    </div>
 					    <div class="form-group col-md-6">
 					       <label for="inputEmail4">AREA</label>
@@ -36,12 +36,12 @@
 
 					  <div class="form-group">
 					    <label for="inputAddress">DESCRIPCIÓN</label>
-					    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="1234 Main St">
+					    <input type="text" class="form-control" id="descripcion" required name="descripcion" pattern="[A-Za-z\sáéíóú]+" >
 					  </div>
 					  <div class="form-group">
 					   	<label for="from">FECHA</label>
                   		 <div class="input-group date mo-date">
-						  <input type="date" class="form-control" name="fecha" id="fecha"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+						  <input type="date" class="form-control" name="fecha" id="fecha" min="2019-12-01" max="2019-12-31"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
 						</div>
 					  </div>
 					  <button type="submit" class="btn btn-primary">ACEPTAR</button>
