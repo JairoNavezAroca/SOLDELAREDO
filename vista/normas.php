@@ -27,10 +27,10 @@
 					        <div class="modal-body">
 					          	  <div class="form-row">
 								    
-								      <input type="text" class="form-control" name="norma" id="norma" >
+								      <input type="text" required name="norma" pattern="[A-Za-z\sáéíóú]+" minlength="5" id="norma" class="form-control">
 								     <div class="form-group">
 				                  		 <div class="input-group date mo-date">
-										  <input type="date" class="form-control" name="fecha" id="fecha"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+										  <input type="date" class="form-control" required name="fecha" id="fecha" min="2019-12-01"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
 										</div>
 									  </div>
 								    
