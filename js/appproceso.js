@@ -100,7 +100,7 @@ $(document).ready(function(){
 
     // Delete a proceso
     $(document).on('click', '.proceso-delete', function() {
-      if(swal('Are you sure you want to delete it?')) {
+      if(confirm('Are you sure you want to delete it?')) {
         let element = $(this)[0].parentElement.parentElement;
         let idproceso = $(element).attr('idproceso');
         let accion = 'eliminar';
