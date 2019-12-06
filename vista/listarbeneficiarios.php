@@ -54,7 +54,7 @@
 	  	 		 <td><?php echo $persona[2] ?></td>
 	  	 		 <td><?php echo $descripcion ?></td>
 	  	 		 <?php 
-	  	 		 	$sql="INSERT INTO Beneficios(descripcion,DniPersonal) values ('$descripcion','$dnisinrepetir[$j]')";
+	  	 		 	$sql="INSERT INTO beneficios(descripcion,DniPersonal) values ('$descripcion','$dnisinrepetir[$j]')";
 	  	 		 	EjecutarConsulta($sql);
 	  	 		 ?>
 	  	 	</tr>

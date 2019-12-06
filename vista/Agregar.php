@@ -29,7 +29,7 @@
 				  	<div class="col-md-2"></div>
 				    <div class="col-md-8" align="center">
 				      <label for="inputEmail4">DNI</label>
-				      <input type="text" class="form-control" name="dni" id="dni" placeholder="DNI">
+				      <input type="text"  required name="dni" id="dni" minlength="8" maxlength="8" pattern="[0-9]+" class="form-control" placeholder="DNI">
 				    </div>
 				  	<div class="col-md-2"></div>
 				  </div>
