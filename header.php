@@ -141,8 +141,8 @@
                   </li>
                   <li><a><i class="fa fa-users"></i>Usuarios<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Registrar Usuario</a></li>
-                      <li><a href="vista/vlistarusuarios.php">Listar Usuario</a></li>
+                      <li><a href="vista/Usuario_Editor.php">Registrar Usuario</a></li>
+                      <li><a href="vista/Usuario_Ver.php">Listar Usuario</a></li>
                     </ul>
                   </li>
                 </ul>

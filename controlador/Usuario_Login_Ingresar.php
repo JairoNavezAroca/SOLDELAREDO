@@ -9,7 +9,7 @@
 		header('location:../vista/index.php');
 	}
 	else{
-		$_SESSION['error'] = 'Email y/o contraseña incorrecto, intente nuevamente';
+		$_SESSION['error'] = 'Email y/o contraseña incorrecto, intente nuevamente; o verifique si el usuario está inhabilitado';
 		header('location:../vista/Usuario_Login.php');
 	}
 ?>

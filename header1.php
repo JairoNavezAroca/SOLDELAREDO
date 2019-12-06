@@ -141,8 +141,8 @@
                   </li>
                   <li><a><i class="fa fa-users"></i>Usuarios<span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Registrar Usuario</a></li>
-                      <li><a href="vlistarusuarios.php">Listar Usuario</a></li>
+                      <li><a href="Usuario_Editor.php">Registrar Usuario</a></li>
+                      <li><a href="Usuario_Ver.php">Listar Usuario</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -168,11 +168,11 @@
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li>
-                      <a href="javascript:;">
-                        <span>Settings</span>
+                      <a href="Usuario_ConfigurarCuenta.php">
+                        <span>Mi Cuenta</span>
                       </a>
                     </li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="../controlador/Usuario_Salir.php">Cerrar Sesion</a></li>
                   </ul>
                 </li>
               </ul>

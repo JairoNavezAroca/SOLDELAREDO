@@ -7,14 +7,15 @@
 	$Contraseña = $_POST['Contraseña'];
 	$Pregunta = $_POST['Pregunta'];
 	$Respuesta = $_POST['Respuesta'];
+	$Area = $_POST['Area'];
 
 	session_start();
 	if ($IdUsuario == ''){
-		$res = Usuario::registrar($IdUsuario,$Apellidos,$Nombres,$Email,$Contraseña,$Pregunta,$Respuesta);
+		$res = Usuario::registrar($IdUsuario,$Apellidos,$Nombres,$Email,$Contraseña,$Pregunta,$Respuesta,$Area);
 		$_SESSION['mensaje'] = 'Usuario Registrado';
 	}
 	else{
-		$res = Usuario::modificar($IdUsuario,$Apellidos,$Nombres,$Email,$Contraseña,$Pregunta,$Respuesta);
+		$res = Usuario::modificar($IdUsuario,$Apellidos,$Nombres,$Email,$Contraseña,$Pregunta,$Respuesta,$Area);
 		$_SESSION['mensaje'] = 'Usuario Modificado';
 	}
 	if ($res)
