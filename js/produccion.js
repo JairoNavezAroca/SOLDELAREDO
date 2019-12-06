@@ -69,6 +69,14 @@ function registrarProduccion(){
         swal("Cantidad inválida");
         return false;
     }
+    if(cantidad<0){
+        swal("La cantidad no puede ser negativa");
+        return false;
+    }
+    if(fechaAlmacen<fecha){
+        swal("Fecha de almacen incorrecta");
+        return false;
+    }
     $.ajax({
         url: "../controlador/cProduccion.php",
         type: "POST",
@@ -121,6 +129,10 @@ function registrarInsumoProd(){
     }
     if(isNaN(cantidadInsumo)){
         swal("Cantidad inválida");
+        return false;
+    }
+    if(cantidadInsumo<0){
+        swal("La cantidad no puede ser negativa");
         return false;
     }
     $.ajax({
@@ -232,3 +244,22 @@ function getQueryVariable(variable) {
     }
     return false;
 }
+
+function soloLetras(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " abcdefghijklmnñopqrstuvwxyz";
+    especiales = "8-37-39-46";
+
+    tecla_especial = false
+    for(var i in especiales){
+         if(key == especiales[i]){
+             tecla_especial = true;
+             break;
+         }
+     }
+
+     if(letras.indexOf(tecla)==-1 && !tecla_especial){
+         return false;
+     }
+ }

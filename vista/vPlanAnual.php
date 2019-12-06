@@ -14,15 +14,15 @@
                   <form class="form-horizontal form-label-left input_mask">
                     <div class="form-group">
                       <div class="col-md-5 col-sm-5 col-xs-12 has-feedback">
-                        <input type="text" class="form-control" id="plan" placeholder="PLAN DE TRABAJO ANUAL">
+                        <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="plan" placeholder="PLAN DE TRABAJO ANUAL">
                       </div>
                       <div class="col-md-5 col-sm-5 col-xs-12 has-feedback">
-                        <input type="text" class="form-control" id="objetivo" placeholder="OBJETIVO">
+                        <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="objetivo" placeholder="OBJETIVO">
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-md-5 col-sm-5 col-xs-12 has-feedback">
-                        <input type="text" class="form-control" id="meta" placeholder="META">
+                        <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="meta" placeholder="META">
                       </div>
                       <div class="col-md-2 col-sm-2 col-xs-12 has-feedback">
                         <input type="text" class="form-control" id="annio" placeholder="AÑO">

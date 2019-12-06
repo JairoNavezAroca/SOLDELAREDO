@@ -15,13 +15,13 @@
                   <form class="form-horizontal form-label-left input_mask">
                     <div class="form-group">
                       <div class="col-md-3 col-sm-3 col-xs-12 has-feedback">
-                        <input type="text" class="form-control" id="descripcion" placeholder="DESCRIPCION">
+                        <input type="text" onkeypress="return soloLetras(event)" class="form-control" id="descripcion" placeholder="DESCRIPCION">
                       </div>
                       <div class="col-md-3 col-sm-3 col-xs-12 has-feedback">
-                        <input type="text" class="form-control" id="responsable" placeholder="RESPONSABLE">
+                        <input type="text"  onkeypress="return soloLetras(event)" class="form-control" id="responsable" placeholder="RESPONSABLE">
                       </div>
                       <div class="col-md-3 col-sm-3 col-xs-12 has-feedback">
-                        <input type="date" class="form-control" id="fecha" placeholder="FECHA">
+                        <input type="date" class="form-control" id="fecha" >
                       </div>
                       <div class="col-md-3 col-sm-3 col-xs-12 has-feedback">
                         <button type="reset" class="btn btn-secondary"><i class="fa fa-paint-brush"></i> Limpiar</button>

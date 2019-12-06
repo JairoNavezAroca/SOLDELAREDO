@@ -48,7 +48,7 @@ function registrarCarta(){
     descripcion = $("#descripcion").val();
     idProyecto = $("#idProyecto").val();
     annio = $("#annio").val();
-    if(area==="" || tipo==="" || titulo==="" || descripcion==="" || idProyecto==="" || annio===""){
+    if(area==="" || tipo==="" || titulo==="" || descripcion==="" || idProyecto==="" || annio==="" || /^\s+$/.test(area) || /^\s+$/.test(tipo) || /^\s+$/.test(titulo) || /^\s+$/.test(descripcion)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -87,6 +87,25 @@ function registrarCarta(){
         }
     });
 }
+
+function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " abcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
 
 $(document).on('click','.detalleCarta', function(){
     const element = $(this)[0].parentElement.parentElement;

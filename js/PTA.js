@@ -53,7 +53,8 @@ function registrarPTA(){
     objetivo = $("#objetivo").val();
     meta = $("#meta").val();
     annio = $("#annio").val();
-    if(PTA==="" || objetivo==="" || meta==="" || annio===""){
+    var annio2=parseInt(annio,10);
+    if(PTA==="" || objetivo==="" || meta==="" || annio==="" || /^\s+$/.test(PTA) || /^\s+$/.test(objetivo) || /^\s+$/.test(meta) || /^\s+$/.test(annio)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -69,7 +70,7 @@ function registrarPTA(){
         swal("Nombre de la meta muy largo");
         return false;
     }
-    if(isNaN(annio) || annio.length!=4){
+    if(isNaN(annio) || annio.length!=4 || annio2<2015 || annio2>2025){
         swal("Año inválido");
         return false;
     }
@@ -105,6 +106,25 @@ function registrarPTA(){
     });
 }
 
+function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " abcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
 function registrarActividadPTA(){
     var idPTAprueba = getQueryVariable('idPTA');
     var descripcion, responsable,fecha,idPTA;
@@ -112,7 +132,7 @@ function registrarActividadPTA(){
     responsable = $("#responsable").val();
     fecha = $("#fecha").val();
     idPTA = getQueryVariable('idPTA');
-    if(descripcion==="" || responsable===""){
+    if(descripcion==="" || responsable==="" || /^\s+$/.test(descripcion) || /^\s+$/.test(responsable)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }

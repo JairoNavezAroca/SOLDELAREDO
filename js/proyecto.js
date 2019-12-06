@@ -59,11 +59,11 @@ function registrarProyecto(){
     annioInicio = $("#añoInicio").val();
     annioFin = $("#añoFin").val();
     proyecto = $("#descripcion").val();
-    if(annioInicio==="" || annioFin==="" || proyecto===""){
+    if(annioInicio==="" || annioFin==="" || proyecto==="" || /^\s+$/.test(annioInicio) || /^\s+$/.test(annioFin) || /^\s+$/.test(proyecto)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
-    if(isNaN(annioInicio) || annioInicio.length!=4){
+    if(isNaN(annioInicio) || annioInicio.length!=4 || parseInt(annioInicio,10)<2019 || parseInt(annioFin,10)>2025){
         swal("Año inválido");
         return false;
     }
@@ -101,6 +101,25 @@ function registrarProyecto(){
     });
 }
 
+function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " abcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
+
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
+
 function registrarActProyecto(){
     var descripcion,equipo,tiempo,subtareas;
     descripcion = $("#descripcion").val();
@@ -108,7 +127,7 @@ function registrarActProyecto(){
     duracion = $("#duracion").val();
     subtareas = $("#subtareas").val();
     idProyecto = getQueryVariable('idProyecto');
-    if(descripcion==="" || equipo==="" || tiempo==="" || subtareas===""){
+    if(descripcion==="" || equipo==="" || tiempo==="" || subtareas==="" || /^\s+$/.test(descripcion) || /^\s+$/.test(equipo) || /^\s+$/.test(duracion) || /^\s+$/.test(subtareas)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }
@@ -232,7 +251,7 @@ function actualizarActProyecto(){
     duracion = $("#duracion").val();
     subtareas = $("#subtareas").val();
     idActividadProy = $("#tablaActividades").val();
-    if(descripcion==="" || equipo==="" || tiempo==="" || subtareas===""){
+    if(descripcion==="" || equipo==="" || tiempo==="" || subtareas==="" || /^\s+$/.test(descripcion) || /^\s+$/.test(equipo) || /^\s+$/.test(duracion) || /^\s+$/.test(subtareas)){
         swal("Los campos no pueden estar vacíos");
         return false;
     }

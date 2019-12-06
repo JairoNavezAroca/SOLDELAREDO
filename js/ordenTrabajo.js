@@ -142,6 +142,10 @@ function registrarAct(){
         swal("La cantidad debe ser un numero");
         return false;
     }
+    if(cantidad <0){
+        swal("La cantidad no puede ser negativa");
+        return false;
+    }
     $.ajax({
         url: "../controlador/cOrdenTrabajo.php",
         type: "POST",
@@ -293,3 +297,22 @@ function getQueryVariable(variable) {
     }
     return false;
 }
+
+function soloLetras(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " abcdefghijklmnñopqrstuvwxyz";
+    especiales = "8-37-39-46";
+
+    tecla_especial = false
+    for(var i in especiales){
+         if(key == especiales[i]){
+             tecla_especial = true;
+             break;
+         }
+     }
+
+     if(letras.indexOf(tecla)==-1 && !tecla_especial){
+         return false;
+     }
+ }
