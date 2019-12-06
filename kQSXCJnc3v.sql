@@ -1,3 +1,6 @@
+create database sstareapesii;
+use sstareapesii;
+
 -- phpMyAdmin SQL Dump
 -- version 4.8.5
 -- https://www.phpmyadmin.net/
@@ -33,7 +36,7 @@ CREATE TABLE `Actividades` (
   `actividad` varchar(100) DEFAULT NULL,
   `idTarea` int(11) DEFAULT NULL,
   `idProceso` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 -- --------------------------------------------------------
 
@@ -47,7 +50,7 @@ CREATE TABLE `ActividadesOrdenTrab` (
   `descripcion` varchar(80) NOT NULL,
   `importeUnitario` decimal(18,2) DEFAULT NULL,
   `numero` char(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -59,7 +62,7 @@ CREATE TABLE `Amenazas` (
   `idAmenaza` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `idFoda` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -71,7 +74,7 @@ CREATE TABLE `area` (
   `idarea` int(11) NOT NULL,
   `nombre` varchar(50) DEFAULT NULL,
   `ruc` varchar(18) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `area`
@@ -99,7 +102,7 @@ CREATE TABLE `asistencias` (
   `DniPersonal` varchar(8) DEFAULT NULL,
   `Extras` decimal(5,2) DEFAULT NULL,
   `HorasMenos` decimal(5,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `asistencias`
@@ -130,7 +133,7 @@ CREATE TABLE `beneficios` (
   `idbeneficio` int(11) NOT NULL,
   `descripcion` varchar(25) DEFAULT NULL,
   `DniPersonal` varchar(8) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 -- --------------------------------------------------------
 
@@ -145,7 +148,7 @@ CREATE TABLE `capacitaciones` (
   `capacitador` text,
   `fecha` date DEFAULT NULL,
   `motivo` text
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `capacitaciones`
@@ -181,7 +184,7 @@ CREATE TABLE `carta` (
   `annio` date NOT NULL,
   `titulo` varchar(50) NOT NULL,
   `idProyecto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -216,7 +219,7 @@ CREATE TABLE `Debilidades` (
   `idDebilidad` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `idFoda` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -231,7 +234,7 @@ CREATE TABLE `detalleevrendimiento` (
   `Porcentaje` decimal(4,1) DEFAULT NULL,
   `Fecha` datetime DEFAULT NULL,
   `Estado` bit(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `detalleevrendimiento`
@@ -261,7 +264,7 @@ CREATE TABLE `detalleordenoptimizacion` (
   `FechaRealizar` date DEFAULT NULL,
   `Respuesta` varchar(30) DEFAULT NULL,
   `IdOrdenOptimizacion` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `detalleordenoptimizacion`
@@ -280,7 +283,7 @@ CREATE TABLE `DetallePedido` (
   `numero` char(10) NOT NULL,
   `codInsumo` char(4) NOT NULL,
   `cantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -292,7 +295,7 @@ CREATE TABLE `DetalleProduccion` (
   `numero` char(10) NOT NULL,
   `codInsumo` char(4) NOT NULL,
   `cantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -307,7 +310,7 @@ CREATE TABLE `detallepropmejora` (
   `Fecha` datetime DEFAULT NULL,
   `Estado` bit(1) DEFAULT NULL,
   `Titulo` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `detallepropmejora`
@@ -331,7 +334,7 @@ CREATE TABLE `detalletecnicaproduccion` (
   `Titulo` varchar(100) DEFAULT NULL,
   `Fecha` datetime DEFAULT NULL,
   `Estado` bit(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `detalletecnicaproduccion`
@@ -359,7 +362,7 @@ INSERT INTO `detalletecnicaproduccion` (`IdDetalleTecnica`, `IdTecnica`, `Detall
 CREATE TABLE `EAFA` (
   `idEstrategiaFA` int(11) NOT NULL,
   `idAmenaza` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -370,7 +373,7 @@ CREATE TABLE `EAFA` (
 CREATE TABLE `EDAA` (
   `idEstrategiaDA` int(11) NOT NULL,
   `idAmenaza` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -381,7 +384,7 @@ CREATE TABLE `EDAA` (
 CREATE TABLE `EDAD` (
   `idEstrategiaDA` int(11) NOT NULL,
   `idDebilidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -392,7 +395,7 @@ CREATE TABLE `EDAD` (
 CREATE TABLE `EDOD` (
   `idEstrategiaDO` int(11) NOT NULL,
   `idDebilidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -403,7 +406,7 @@ CREATE TABLE `EDOD` (
 CREATE TABLE `EDOO` (
   `idEstrategiaDO` int(11) NOT NULL,
   `idOportunidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -414,7 +417,7 @@ CREATE TABLE `EDOO` (
 CREATE TABLE `EFAF` (
   `idEstrategiaFA` int(11) NOT NULL,
   `idFortaleza` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -425,7 +428,7 @@ CREATE TABLE `EFAF` (
 CREATE TABLE `EFOF` (
   `idEstrategiaFO` int(11) NOT NULL,
   `idFortaleza` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -436,7 +439,7 @@ CREATE TABLE `EFOF` (
 CREATE TABLE `EFOO` (
   `idEstrategiaFO` int(11) NOT NULL,
   `idOportunidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -453,7 +456,7 @@ CREATE TABLE `empresa` (
   `valor` varchar(18) DEFAULT NULL,
   `factor` varchar(18) DEFAULT NULL,
   `objetivo` varchar(18) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `empresa`
@@ -471,7 +474,7 @@ CREATE TABLE `EstrategiasDA` (
   `idEstrategiaDA` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `idFoda` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -483,7 +486,7 @@ CREATE TABLE `EstrategiasDO` (
   `idEstrategiaDO` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `idFoda` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -495,7 +498,7 @@ CREATE TABLE `EstrategiasFA` (
   `idEstrategiaFA` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `idFoda` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -507,7 +510,7 @@ CREATE TABLE `EstrategiasFO` (
   `idEstrategiaFO` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `idFoda` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -518,7 +521,7 @@ CREATE TABLE `EstrategiasFO` (
 CREATE TABLE `evrendimiento` (
   `DniPersonal` char(8) NOT NULL,
   `IdEvRendimiento` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `evrendimiento`
@@ -536,7 +539,7 @@ INSERT INTO `evrendimiento` (`DniPersonal`, `IdEvRendimiento`) VALUES('25521675'
 CREATE TABLE `FODA` (
   `idFoda` int(11) NOT NULL,
   `annio` char(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Volcado de datos para la tabla `FODA`
@@ -558,7 +561,7 @@ CREATE TABLE `Fortalezas` (
   `idFortaleza` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `idFoda` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 --
 -- Volcado de datos para la tabla `Fortalezas`
@@ -578,7 +581,7 @@ CREATE TABLE `Historial` (
   `año` char(4) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `vs` decimal(2,1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 -- --------------------------------------------------------
 
@@ -591,7 +594,7 @@ CREATE TABLE `Insumos` (
   `descripcion` varchar(40) NOT NULL,
   `precio` decimal(18,2) NOT NULL,
   `cantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -624,7 +627,7 @@ CREATE TABLE `MejoraProcesos` (
   `recomendacion` varchar(100) DEFAULT NULL,
   `condicion` char(1) DEFAULT NULL,
   `idProceso` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `MejoraProcesos`
@@ -647,7 +650,7 @@ CREATE TABLE `MejoraTareas` (
   `condicion` char(1) DEFAULT NULL,
   `idTarea` int(11) DEFAULT NULL,
   `idProceso` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 -- --------------------------------------------------------
 
@@ -659,7 +662,7 @@ CREATE TABLE `normasseguridad` (
   `idnorma` int(11) NOT NULL,
   `descripcion` varchar(50) DEFAULT NULL,
   `fecha` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 -- --------------------------------------------------------
 
@@ -671,7 +674,7 @@ CREATE TABLE `ObjetivosProduccion` (
   `idObjetivo` int(11) NOT NULL,
   `descripcion` varchar(100) NOT NULL,
   `fecha` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -683,7 +686,7 @@ CREATE TABLE `Oportunidades` (
   `idOportunidad` int(11) NOT NULL,
   `descripcion` varchar(200) NOT NULL,
   `idFoda` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -703,7 +706,7 @@ CREATE TABLE `OrdenDeImplementacion` (
   `actividades` varchar(200) DEFAULT NULL,
   `docRelacionados` varchar(100) DEFAULT NULL,
   `observaciones` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `OrdenDeImplementacion`
@@ -721,7 +724,7 @@ CREATE TABLE `OrdenOptimizacion` (
   `IdOrdenOptimizacion` int(11) NOT NULL,
   `IdPropMejora` int(11) NOT NULL,
   `FechaRegistro` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `OrdenOptimizacion`
@@ -740,7 +743,7 @@ CREATE TABLE `OrdenPedido` (
   `proveedor` varchar(30) DEFAULT NULL,
   `fecha` date NOT NULL,
   `lugarAtencion` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -752,7 +755,7 @@ CREATE TABLE `OrdenTrabajo` (
   `numero` char(10) NOT NULL,
   `area` varchar(40) NOT NULL,
   `fecha` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -773,7 +776,7 @@ CREATE TABLE `Personal` (
   `inicioContrato` date DEFAULT NULL,
   `finContrato` date DEFAULT NULL,
   `salario` decimal(5,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `Personal`
@@ -823,7 +826,7 @@ CREATE TABLE `Procesos` (
   `versiones` decimal(2,1) DEFAULT NULL,
   `fecha` date DEFAULT NULL,
   `tipoproceso` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `Procesos`
@@ -849,7 +852,7 @@ CREATE TABLE `Produccion` (
   `especificaciones` text,
   `labor` decimal(18,2) DEFAULT NULL,
   `codProducto` char(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -862,7 +865,7 @@ CREATE TABLE `Producto` (
   `descripcion` varchar(40) NOT NULL,
   `precio` decimal(18,2) NOT NULL,
   `cantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -873,7 +876,7 @@ CREATE TABLE `Producto` (
 CREATE TABLE `propmejora` (
   `IdPropMejora` int(11) NOT NULL,
   `FechaRegistro` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `propmejora`
@@ -893,7 +896,7 @@ CREATE TABLE `proyecto` (
   `annioInicio` char(4) NOT NULL,
   `annioFin` char(4) NOT NULL,
   `estado` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -908,7 +911,7 @@ CREATE TABLE `proyecto_actividades` (
   `equipo` varchar(50) NOT NULL,
   `subtareas` text,
   `idProyecto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -922,7 +925,7 @@ CREATE TABLE `PTA` (
   `objetivo` varchar(100) NOT NULL,
   `meta` varchar(100) NOT NULL,
   `annio` char(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -936,7 +939,7 @@ CREATE TABLE `PTA_Actividades` (
   `responsable` varchar(50) NOT NULL,
   `fecha` date NOT NULL,
   `idPTA` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 
 -- --------------------------------------------------------
 
@@ -952,7 +955,7 @@ CREATE TABLE `Solicitud` (
   `Destino` varchar(50) DEFAULT NULL,
   `motivo` varchar(100) DEFAULT NULL,
   `DniPersonal` char(8) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 -- --------------------------------------------------------
 
@@ -966,7 +969,7 @@ CREATE TABLE `Tareas` (
   `numero` int(11) DEFAULT NULL,
   `Tarea` varchar(100) DEFAULT NULL,
   `area` char(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `Tareas`
@@ -983,7 +986,7 @@ INSERT INTO `Tareas` (`idTarea`, `idProceso`, `numero`, `Tarea`, `area`) VALUES(
 CREATE TABLE `tecnicaproduccion` (
   `IdTecnica` int(11) NOT NULL,
   `FechaRegistro` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
 
 --
 -- Volcado de datos para la tabla `tecnicaproduccion`
