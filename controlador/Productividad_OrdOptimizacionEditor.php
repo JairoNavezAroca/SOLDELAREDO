@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	require_once '../modelo/Productividad_PropMejora.php';
 	require_once '../modelo/Productividad_DetallePropMejora.php';
 	require_once '../modelo/Productividad_OrdenOptimizacion.php';
@@ -8,6 +9,16 @@
 	$Respuesta = $_POST['Respuesta'];
 	$FechaRealizar = $_POST['FechaRealizar'];
 	$Detalle = $_POST['Detalle'];
+
+	if (!esValido($Detalle,10)){
+		$_SESSION['error'] = "Titulo invalido, intente nuevamente";
+		echo '<script> window.location.replace("../vista/Productividad_OrdOptimizacionEditor.php") </script>';
+		return;
+	}
+
+
+	
+
 
 	$Fecha = new DateTime();
 	$Fecha->modify('-6 hours');

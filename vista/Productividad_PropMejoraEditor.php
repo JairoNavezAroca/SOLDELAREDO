@@ -26,6 +26,22 @@
 <div class="right_col" role="main">
 	<br>
 	<h1 class="text-center">Registrar / Editar Propuesta de Mejora</h1>
+
+    <?php if(isset($_SESSION['error'])){ ?>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="alert alert-danger">
+          <center>
+            <p><?php echo $_SESSION['error'] ?></p>
+          </center>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+    <?php } ?>
+    <?php unset($_SESSION['error']) ?>
+
 	<br>
 	<form action="../controlador/Productividad_PropMejoraEditor.php" method="post">
 		<!-- IdPropMejora -->
