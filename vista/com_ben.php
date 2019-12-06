@@ -17,13 +17,13 @@
 			  	<form  method="POST" action="listarbeneficiarios.php">
 	              <div class="form-group">
 	                <label for="formGroupExampleInput">COMPENSACION O BENEFICIO</label>
-	                <input type="text" class="form-control" name="beneficio" id="beneficio">
+	                <input type="text" required name="beneficio" pattern="[A-Za-z\sáéíóú]+" id="beneficio" class="form-control">
 	              </div>
 	              <div class="form-group">
 	                 <div class="form-group">
 					   	<label for="from">FECHA INICIO</label>
                   		 <div class="input-group date mo-date">
-						  <input type="date" class="form-control" name="fechaI" id="fechaI"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+						  <input type="date" class="form-control" name="fechaI" id="fechaI" min="2019-12-01" max="2019-12-31"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
 						</div>
 					  </div>
 	              </div>
@@ -31,7 +31,7 @@
 	                 <div class="form-group">
 					   	<label for="from">FECHA INICIO</label>
                   		 <div class="input-group date mo-date">
-						  <input type="date" class="form-control" name="fechaF" id="fechaF"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+						  <input type="date" class="form-control" name="fechaF" id="fechaF" min="2019-12-01" max="2019-12-31"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
 						</div>
 					  </div>
 	              </div>
