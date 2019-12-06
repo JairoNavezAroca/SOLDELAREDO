@@ -2,7 +2,7 @@
   include("../conexion.php");
   $idorden = isset($_GET['idorden']) ? $_GET['idorden'] : NULL;
   if(isset($_GET['idorden'])) {
-        $query = "SELECT P.proceso as proceso, MP.idProceso as idproceso, OI.fecha as fecha, OI.propuesta as propuesta, OI.actividades as actividades, OI.nroDocumento as nrodocumento, OI.docRelacionados as docrelacionados, OI.observaciones as observaciones, OI.idOrden as idOrden, OI.DniPersonal as dnipersonal, OI.cargo as cargo FROM OrdenDeImplementacion OI JOIN MejoraProcesos MP on OI.idMejoraProceso=MP.idMejoraProceso JOIN Procesos P ON P.idProceso=MP.idProceso where idOrden='$idorden'";
+        $query = "SELECT P.proceso as proceso, MP.idProceso as idproceso, OI.fecha as fecha, OI.propuesta as propuesta, OI.actividades as actividades, OI.nroDocumento as nrodocumento, OI.docRelacionados as docrelacionados, OI.observaciones as observaciones, OI.idOrden as idOrden, OI.cargo as cargo FROM OrdenDeImplementacion OI JOIN MejoraProcesos MP on OI.idMejoraProceso=MP.idMejoraProceso JOIN Procesos P ON P.idProceso=MP.idProceso where idOrden='$idorden'";
         $rs_query =$conexion->query($query) ;
         $row=mysqli_fetch_row($rs_query);
       }
@@ -35,8 +35,7 @@
                       <!-- /.row -->
                       <div>
                         <br>Proceso: <?php echo $row[0];?>
-                        <br>Responsable:<?php echo $row[9];?>
-                        <br>Cargo: <?php echo $row[10];?>
+                        <br>Cargo: <?php echo $row[9];?>
                         <br>Propuesta:<?php echo $row[3];?>
                         <br>Actividades a realizar: <?php echo $row[4];?>
                         <br>Documentos relacionados: <?php echo $row[6];?>

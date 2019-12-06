@@ -1,6 +1,5 @@
 $(document).ready(function(){
     let edit = false;
-    selectproceso();
     fecha();
     verOrden();
 
@@ -19,17 +18,17 @@ $(document).ready(function(){
         type: 'POST',
         success: function(response) {
           const ordenes = JSON.parse(response);
+          console.log(ordenes);
           let template = '';
           ordenes.forEach(orden => {
             template += `
                     <tr idorden="${orden.idorden}">
-                    <td>${orden.idorden}</td>
-                    <td>${orden.dni}</td>           
+                    <td>${orden.idorden}</td>           
                     <td>${orden.proceso}</td>
                     <td>${orden.propuesta}</td>
                     <td>
-                      <a class="orden-ver btn btn-danger btn-xs"  href="../vista/ordendeimplementacion.php?idorden=${orden.idorden}&word=${orden.idorden}"><i class="fa fa-file-pdf-o"></i></a>
-                      <a class="orden-ver btn btn-danger btn-xs"  href="../vista/ordendeimplementacion.php?idorden=${orden.idorden}&pdf=${orden.idorden}"><i class="fa fa-file-word-o"></i></a>
+                      <a class="orden-ver btn btn-danger btn-xs"  href="../vista/ordendeimplementacion.php?idorden=${orden.idorden}&word=${orden.idorden}"><i class="fa fa-file-word-o"></i></a>
+                      <a class="orden-ver btn btn-danger btn-xs"  href="../vista/ordendeimplementacion.php?idorden=${orden.idorden}&pdf=${orden.idorden}"><i class="fa fa-file-pdf-o"></i></a>
                       <button type="button" class="orden-edit btn btn-danger btn-xs" ><i class="fa fa-pencil"></i></button>
                       <button type="button" class="orden-delete btn btn-danger btn-xs" ><i class="fa fa-trash-o"></i></button>
                     </td>
@@ -57,13 +56,12 @@ $(document).ready(function(){
               ordenes.forEach(orden => {
                 template += `
                     <tr idorden="${orden.idorden}">
-                    <td>${orden.idorden}</td>
-                    <td>${orden.dni}</td>           
+                    <td>${orden.idorden}</td>          
                     <td>${orden.proceso}</td>
                     <td>${orden.propuesta}</td>
                     <td>
-                      <a class="orden-ver btn btn-danger btn-xs"  href="../vista/ordendeimplementacion.php?idorden=${orden.idorden}&word=${orden.idorden}"><i class="fa fa-file-pdf-o"></i></a>
-                      <a class="orden-ver btn btn-danger btn-xs"  href="../vista/ordendeimplementacion.php?idorden=${orden.idorden}&pdf=${orden.idorden}"><i class="fa fa-file-word-o"></i></a>
+                      <a class="orden-ver btn btn-danger btn-xs"  href="../vista/ordendeimplementacion.php?idorden=${orden.idorden}&word=${orden.idorden}"><i class="fa fa-file-word-o"></i></a>
+                      <a class="orden-ver btn btn-danger btn-xs"  href="../vista/ordendeimplementacion.php?idorden=${orden.idorden}&pdf=${orden.idorden}"><i class="fa fa-file-pdf-o"></i></a>
                       <button type="button" class="orden-edit btn btn-danger btn-xs" ><i class="fa fa-pencil"></i></button>
                       <button type="button" class="orden-delete btn btn-danger btn-xs" ><i class="fa fa-trash-o"></i></button>
                     </td>
@@ -80,27 +78,10 @@ $(document).ready(function(){
     });
 
 
-    function selectproceso() {
-    let accion = "obtenerProceso";
-    let idproceso = $('#idproceso').val();
-    $.ajax({
-      url: '../controlador/proceso.php',
-      data: {accion,idproceso},
-      type: 'POST',
-      success: function(response) {
-      const proceso = JSON.parse(response);
-        $('#proceso').val(proceso.proceso);
-        $('#codigo').val(proceso.idproceso);
-      }
-    });
-  }
-
-
     $('#frmOrden').submit(e => {
         e.preventDefault();
         let rup = edit === false ? 'nuevo' : 'modificar';
         const postData = {
-          dni: $('#dni').val(),
           cargo: $('#cargo').val(),
           fecha: $('#fecha').val(),
           idorden: $('#idorden').val(),
@@ -114,7 +95,7 @@ $(document).ready(function(){
         console.log(postData);
         const url = '../controlador/orden.php';
         $.post(url, postData, (response) => {
-          alert(response);
+          swal(response);
           $('#frmOrden').trigger('reset');
           verOrden();
           fecha();
@@ -130,7 +111,7 @@ $(document).ready(function(){
         let idorden = $(element).attr('idorden');
         let accion = 'eliminar';
         $.post('../controlador/orden.php', {idorden,accion},(response) => {
-          alert(response);
+          swal(response);
           verOrden();
         });
       }
@@ -145,7 +126,6 @@ $(document).ready(function(){
           const orden = JSON.parse(response);
           $('#idorden').val(orden.idorden);
           $('#fecha').val(orden.fecha);
-          $('#dni').val(orden.dni);
           $('#propuesta').val(orden.propuesta);
           $('#actividades').val(orden.actividades);
           $('#docrelacionados').val(orden.docrelacionados);

@@ -47,19 +47,19 @@
 	                        <div class="form-group">
 			                  <label class="col-sm-2 control-label">Diagnostico*</label>
 			                  <div class="col-sm-8">
-			                    <textarea class="form-control" style="height:55px;" id="diagnostico" name="descr" required=""></textarea>
+			                    <textarea class="form-control" style="height:55px;" id="diagnostico" name="descr" required pattern="^[a-z A-Z]+$"></textarea>
 			                  </div>
                 			</div>
                 			<div class="form-group">
 			                  <label class="col-sm-2 control-label">Causas*</label>
 			                  <div class="col-sm-8">
-			                    <textarea class="form-control" style="height:55px;" id="causa" name="descr" required=""></textarea>
+			                    <textarea class="form-control" style="height:55px;" id="causa" name="descr" required pattern="^[a-z A-Z]+$"></textarea>
 			                  </div>
                 			</div>
                 			<div class="form-group">
 			                  <label class="col-sm-2 control-label">Recomendacion*</label>
 			                  <div class="col-sm-8">
-			                    <textarea class="form-control" style="height:55px;" id="recomendacion" name="descr" required=""></textarea>
+			                    <textarea class="form-control" style="height:55px;" id="recomendacion" name="descr" required pattern="^[a-z A-Z]+$"></textarea>
 			                  </div>
                 			</div>
                 			<div class="form-group">

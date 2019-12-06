@@ -159,7 +159,7 @@ $(document).ready(function(){
         };
         const url = '../controlador/planmejoratareas.php';
         $.post(url, postData, (response) => {
-          alert(response);
+          swal(response);
           $('#frmPlan').trigger('reset');
           mejoras();
           fecha();
@@ -175,7 +175,7 @@ $(document).ready(function(){
         let idmejora = $(element).attr('idmejora');
         let accion = 'eliminar';
         $.post('../controlador/planmejoratareas.php', {idmejora,accion},(response) => {
-          alert(response);
+          swal(response);
           mejoras();
         });
       }

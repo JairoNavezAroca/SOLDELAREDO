@@ -29,9 +29,9 @@ $(document).ready(function(){
                 template += `
                     <tr idproceso="${proceso.idproceso}">
                     <td>${proceso.proceso}</td>
-                    <td>${proceso.fecha}</td>           
+                    <td>${proceso.tipoproceso}</td>           
+                    <td>${proceso.fecha}</td>
                     <td>${proceso.versiones}</td>
-                    <td>${proceso.tipoproceso}</td>
                     <td>
                       <a class="proceso-ver btn btn-danger btn-xs"  href="../vista/tareas.php?idproceso=${proceso.idproceso}"><i class="glyphicon glyphicon-eye-close"></i></a>
                       <button type="button" class="proceso-edit btn btn-danger btn-xs" ><i class="fa fa-pencil"></i></button>
@@ -61,7 +61,7 @@ $(document).ready(function(){
         };
         const url = '../controlador/proceso.php';
         $.post(url, postData, (response) => {
-          alert(response);
+          swal(response);
           $('#frmProcesos').trigger('reset');
           verProcesos();
           edit = false;
@@ -100,12 +100,12 @@ $(document).ready(function(){
 
     // Delete a proceso
     $(document).on('click', '.proceso-delete', function() {
-      if(confirm('Are you sure you want to delete it?')) {
+      if(swal('Are you sure you want to delete it?')) {
         let element = $(this)[0].parentElement.parentElement;
         let idproceso = $(element).attr('idproceso');
         let accion = 'eliminar';
         $.post('../controlador/proceso.php', {idproceso,accion},(response) => {
-          alert(response);
+          swal(response);
           verProcesos();
         });
       }

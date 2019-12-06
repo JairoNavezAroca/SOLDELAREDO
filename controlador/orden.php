@@ -3,7 +3,6 @@
 	$idorden = isset($_POST['idorden']) ? $_POST['idorden'] : NULL;
 	$fecha = isset($_POST['fecha']) ? $_POST['fecha'] : NULL ;
 	$propuesta = isset($_POST['propuesta']) ? $_POST['propuesta'] : NULL;
-	$dni =  isset($_POST['dni']) ? $_POST['dni'] : NULL;
 	$cargo =  isset($_POST['cargo']) ? $_POST['cargo'] : NULL;
 	$idmejora = isset($_POST['idmejora']) ? $_POST['idmejora'] : NULL;
 	$actividades =  isset($_POST['actividades']) ? $_POST['actividades'] : NULL;
@@ -13,7 +12,7 @@
 
 
 	if ($accion=="nuevo") {
-		$query= "INSERT INTO OrdenDeImplementacion (idMejoraProceso,fecha, propuesta,actividades, DniPersonal, cargo, docRelacionados, observaciones) values('$idmejora','$fecha','$propuesta','$actividades','$dni', '$cargo','$docrelacionados','$observaciones')";
+		$query= "INSERT INTO OrdenDeImplementacion (idMejoraProceso,fecha, propuesta,actividades, cargo, docRelacionados, observaciones) values('$idmejora','$fecha','$propuesta','$actividades','$cargo','$docrelacionados','$observaciones')";
 		$rs_query= $conexion->query($query);
 		if (!$rs_query) {
 			die('Query Failed.');
@@ -40,7 +39,7 @@
 
 	if($accion=="obtenerOrden"){
 		if(isset($_POST['idorden'])) {
-		    $query = "SELECT P.proceso as proceso, MP.idProceso as idproceso, OI.fecha as fecha, OI.propuesta as propuesta, OI.actividades as actividades, OI.nroDocumento as nrodocumento, OI.docRelacionados as docrelacionados, OI.observaciones as observaciones, OI.idOrden as idOrden, OI.DniPersonal as dnipersonal, OI.cargo as cargo FROM OrdenDeImplementacion OI JOIN mejoraprocesos MP on OI.idMejoraProceso=MP.idMejoraProceso JOIN procesos P ON P.idProceso=MP.idProceso where idOrden='$idorden'";
+		    $query = "SELECT P.proceso as proceso, MP.idProceso as idproceso, OI.fecha as fecha, OI.propuesta as propuesta, OI.actividades as actividades, OI.nroDocumento as nrodocumento, OI.docRelacionados as docrelacionados, OI.observaciones as observaciones, OI.cargo as cargo FROM OrdenDeImplementacion OI JOIN mejoraprocesos MP on OI.idMejoraProceso=MP.idMejoraProceso JOIN procesos P ON P.idProceso=MP.idProceso where idOrden='$idorden'";
 		    $rs_query =$conexion->query($query) ;
 
 		    if (!$rs_query) {
@@ -53,7 +52,6 @@
 				'proceso' => $row['proceso'],
 		        'idproceso' => $row['idproceso'],
 		      	'fecha' => $row['fecha'],
-		      	'dni' => $row['dnipersonal'],
 		      	'cargo' => $row['cargo'],
 		        'propuesta' => $row['propuesta'],
 		        'actividades' => $row['actividades'],
@@ -82,7 +80,6 @@
 		    	'proceso' => $row['proceso'],
 		        'idproceso' => $row['idproceso'],
 		      	'fecha' => $row['fecha'],
-		      	'dni' => $row['dnipersonal'],
 		      	'cargo' => $row['cargo'],
 		        'propuesta' => $row['propuesta'],
 		        'actividades' => $row['actividades'],

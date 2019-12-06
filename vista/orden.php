@@ -25,21 +25,17 @@
 	                        <div class="form-group">
 	                           <label class="control-label col-md-2 col-sm-2 col-xs-12">Proceso*</label>
 	                           <div class="col-md-4 col-sm-2 col-xs-12">
-	                            <input type="text" id="proceso" required="required" class="form-control col-md-4col-xs-12">
+	                            <input type="text" id="proceso" required pattern="^[a-z A-Z]+$" class="form-control col-md-4col-xs-12">
 	                           </div>
 	                           <label class="control-label col-md-1 col-sm-2 col-xs-12">Codigo*</label>
 	                           <div class="col-md-3 col-sm-2 col-xs-12">
-	                            <input type="text" id="codigo" required="required" class="form-control col-md-4col-xs-12">
+	                            <input type="text" id="codigo" required pattern="[0-9]+" class="form-control col-md-4col-xs-12">
 	                           </div>
                           	 </div>
 	                        <div class="form-group">
-	                           <label class="control-label col-md-2 col-sm-2 col-xs-12">Responsable*</label>
-	                           <div class="col-md-4 col-sm-2 col-xs-12">
-	                            <input type="text" id="dni" required="required" class="form-control col-md-4col-xs-12">
-	                           </div>
-	                           <label class="control-label col-md-1 col-sm-2 col-xs-12">Cargo*</label>
-	                           <div class="col-md-3 col-sm-2 col-xs-12">
-	                            <input type="text" id="cargo" required="required" class="form-control col-md-4col-xs-12">
+	                           <label class="control-label col-md-2 col-sm-7 col-xs-12">Cargo*</label>
+	                           <div class="col-md-4 col-sm-4 col-xs-12">
+	                            <input type="text" id="cargo" required pattern="^[a-z A-Z]+$" class="form-control col-md-4col-xs-12">
 	                           </div>
                           	 </div>
                           	 <input type="hidden" value="<?php echo $_GET['idmejora'] ?>" id="idmejora">
@@ -47,13 +43,13 @@
                           	<div class="form-group">
 			                  <label class="col-sm-2 control-label">Propuesta*</label>
 			                  <div class="col-sm-8">
-			                    <textarea class="form-control" style="height:55px;" id="propuesta" name="descr" required=""></textarea>
+			                    <textarea class="form-control" style="height:55px;" id="propuesta" name="descr" required pattern="^[a-z A-Z]+$"></textarea>
 			                  </div>
                 			</div>
 	                        <div class="form-group">
 			                  <label class="col-sm-2 control-label">Actividades a realizar*</label>
 			                  <div class="col-sm-8">
-			                    <textarea class="form-control" style="height:90px;" id="actividades" name="descr" required=""></textarea>
+			                    <textarea class="form-control" style="height:90px;" id="actividades" name="descr" required pattern="^[a-z A-Z]+$"></textarea>
 			                  </div>
                 			</div>
                 			<div class="form-group">
@@ -94,7 +90,6 @@
 					          <thead>
 					             <tr>
 					             <th class="col-md-1 col-sm-2 col-xs-12">Id</th>
-					             <th class="col-md-3 col-sm-2 col-xs-12">Personal</th>
 					             <th class="col-md-2 col-sm-2 col-xs-12">Proceso</th>
 					             <th class="col-md-4 col-sm-2 col-xs-12">Propuesta</th>
 					             <th class="col-md-2 col-sm-2 col-xs-12"></th>
@@ -142,6 +137,6 @@
     <script src="../js/orden.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>   
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
   </body>
 </html>
