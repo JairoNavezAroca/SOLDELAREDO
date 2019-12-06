@@ -32,7 +32,7 @@ $(document).ready(function(){
     }; 
     const url = '../controlador/actividad.php';
     $.post(url, postData, (response) => {
-      swal(response);
+      alert(response);
       $('#frmActividad').trigger('reset');
       verActividad();
       edit=false;
@@ -76,7 +76,7 @@ function verActividad() {
       let idactividad = $(element).attr('idactividad');
       let accion = 'eliminar';
       $.post('../controlador/actividad.php', {idactividad,accion},(response) => {
-        swal(response);
+        alert(response);
         verActividad();
       });
     }

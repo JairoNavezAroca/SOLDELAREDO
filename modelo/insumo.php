@@ -22,28 +22,28 @@
         }
 
         function registrar($codInsumo,$descripcion,$precio,$cantidad){
-            $sql = "INSERT INTO insumos(codInsumo,descripcion,precio,cantidad) VALUES('$codInsumo','$descripcion','$precio','$cantidad');";
+            $sql = "INSERT INTO Insumos(codInsumo,descripcion,precio,cantidad) VALUES('$codInsumo','$descripcion','$precio','$cantidad');";
             $this->query($sql);
         }
 
         function actualizar($codInsumo,$descripcion,$precio,$cantidad){
-            $sql = "UPDATE insumos SET descripcion='$descripcion',precio='$precio',cantidad='$cantidad' WHERE codInsumo='$codInsumo';";
+            $sql = "UPDATE Insumos SET descripcion='$descripcion',precio='$precio',cantidad='$cantidad' WHERE codInsumo='$codInsumo';";
             $this->query($sql);
         }
 
         function eliminar($codInsumo){
-            $sql = "DELETE FROM insumos WHERE codInsumo='$codInsumo';";
+            $sql = "DELETE FROM Insumos WHERE codInsumo='$codInsumo';";
             $this->query($sql);
         }
 
         function seleccionar($codInsumo){
-            $sql = "SELECT * FROM insumos WHERE codInsumo='$codInsumo';";
+            $sql = "SELECT * FROM Insumos WHERE codInsumo='$codInsumo';";
             $datos = $this->query1($sql);
             return $datos;
         }
 
         function seleccionarTodos(){
-            $sql = "SELECT * FROM insumos";
+            $sql = "SELECT * FROM Insumos";
             $datos = $this->query1($sql);
             return $datos;
         }

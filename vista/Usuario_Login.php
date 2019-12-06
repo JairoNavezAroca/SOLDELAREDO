@@ -44,8 +44,8 @@
               <?php } ?>
               <!--<input type="hidden" name="_token" value="{{ csrf_token() }}">-->
               <div>
-                <input type="text" class="form-control" placeholder="E-mail" name="Email" required="" value="jnavez@unitru.edu.pe"/>
-                <input type="password" class="form-control" placeholder="Contraseña" name="Contraseña" required="" value="jnavez"/>
+                <input type="text" class="form-control" placeholder="E-mail" name="Email" required=""/>
+                <input type="password" class="form-control" placeholder="Contraseña" name="Contraseña" required=""/>
               </div>
               <div>
                 <input type="submit" class="btn btn-default submit" value="Ingresar">

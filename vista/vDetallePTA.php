@@ -14,7 +14,7 @@
                     <button type="button" class="btn btn-primary" onclick="Export2Doc('imprimir', 'PTA');"><i class="fa fa-file-word-o"></i> Word</button>
                   </div> 
                   <div class="col-md-1 col-sm-2 col-xs-12 has-feedback">
-                    <button type="button" class="btn btn-danger" onclick=""><i class="fa  fa-file-pdf-o"></i> PDF</button>
+                    <button type="button" class="btn btn-danger" onclick="generar()"><i class="fa  fa-file-pdf-o"></i> PDF</button>
                   </div>
                   <div class="clearfix"></div>
                 </div>

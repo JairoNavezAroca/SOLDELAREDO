@@ -25,6 +25,8 @@
 					        <td>FECHA</td>
 					  
 					    </tr>
+						</thead>
+					  <tbody>
 					   <!--Tr FILA -->
 					      <!-- THEAD ENCIERRA A  TD,TD ENCABEZADO -->
 					      <!--TD COLUMNA -->
@@ -74,8 +76,6 @@
 					        
 					    <?php }
 					   ?>
-					  </thead>
-					  <tbody>
 					  </tbody>
 					</table>
 					 <a href="ExportarCapacitaciones.php?Word" class="btn btn-warning">EXPORTAR</a> 

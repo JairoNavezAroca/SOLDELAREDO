@@ -1,5 +1,4 @@
 <?php
-	session_start();
 	include("../header1.php"); 
 ?>
 <div class="right_col" role="main">
@@ -109,6 +108,7 @@
 			</div>
 			<div class="col-md-5 col-sm-6 col-xs-6">
 				<select class="form-control" name="Area">
+					<option value="Administrador">Administrador</option>
 					<option value="Gerencia">Gerencia</option>
 					<option value="Produccion">Produccion</option>
 					<option value="Procesos">Procesos</option>

@@ -8,13 +8,13 @@
             <div class="x_panel">
               <div class="x_title">  
                 <div class="col-md-10 col-sm-5 col-xs-12 has-feedback">               
-                    <h2>REPORTE DE PROYECTO</h2>
+                    <h2>REPORTE DE PRODUCCION</h2>
                   </div>
                   <div class="col-md-1 col-sm-2 col-xs-12 has-feedback">
                     <button type="button" class="btn btn-primary" onclick="Export2Doc('imprimir', 'Produccion');"><i class="fa fa-file-word-o"></i> Word</button>
                   </div> 
                   <div class="col-md-1 col-sm-2 col-xs-12 has-feedback">
-                    <button type="button" class="btn btn-danger" onclick=""><i class="fa  fa-file-pdf-o"></i> PDF</button>
+                    <button type="button" class="btn btn-danger" onclick="generar()"><i class="fa  fa-file-pdf-o"></i> PDF</button>
                   </div>             
                 <div class="clearfix"></div>
               </div>
@@ -27,7 +27,7 @@
                   Fecha de Expedicion de la Orden: <?php echo $datosProduccion2[0][2]?><br><br>
                   <strong>Datos sobre el producto a fabricar:</strong><br>
                  - Producto:  
-                  <?php $var=$produccion->query1("SELECT product.descripcion FROM produccion p INNER join producto product on product.codProducto=p.codProducto where p.numero='$numero1'");?>
+                  <?php $var=$produccion->query1("SELECT product.descripcion FROM Produccion p INNER join Producto product on product.codProducto=p.codProducto where p.numero='$numero1'");?>
                   <?php echo $var[0][0]?><br>
                   - Cantidad:
                   <?php echo $datosProduccion2[0][4]?><br>
@@ -69,30 +69,35 @@
                           ?>        
                           </td>
                         </tr>
-                        <tr class="even pointer">
-                          <td style="text-align: center;border: hidden" class=""></td>
-                          <td style="text-align: center;border: hidden"  class=""></td>
-                          <td style="text-align: center;border: hidden"  class="">Suma</td>
-                          <?php
-                          $res=0;
-                          ?>
-                          <td style="text-align: center;border: hidden"  class="">
-                          <?php for ($i=0; $i < count($datosInsumoProd); $i++) {
-                            $multi=$datosInsumoProd[$i][6]*$datosInsumoProd[$i][5]; 
-                            $res=$multi+$res;
-                          } ?>
-                          <?php echo $res ?>
-                            
-                          </td>
-                        </tr>
-                         <tr class="even pointer">
-                          <td style="text-align: center;border: hidden" class=""></td>
-                          <td style="text-align: center;border: hidden"  class="">Costo Total</td>
-                          <td style="text-align: center;border: hidden"  class="">Suma+Labor</td>
-                          <td style="text-align: center;border: hidden"  class=""><?php echo  $datosProduccion2[0][6]+$res ?></td>
-                        </tr>
                       </tbody>
-                    </table>  
+                  </table> 
+
+                  <table style="border: hidden" class="table  table-bordered">
+                    <tbody style="border: hidden">
+                          <tr class="even pointer">
+                            <td style="text-align: center;border: hidden" class=""></td>
+                            <td style="text-align: center;border: hidden"  class=""></td>
+                            <td style="border: hidden;text-align: right"   width="200px" class="">Suma</td>
+                            <?php
+                            $res=0;
+                            ?>
+                            <td style="text-align: left;border: hidden"  width="100px" class="">
+                            <?php for ($i=0; $i < count($datosInsumoProd); $i++) {
+                              $multi=$datosInsumoProd[$i][6]*$datosInsumoProd[$i][5]; 
+                              $res=$multi+$res;
+                            } ?>
+                            <?php echo $res ?>
+                              
+                            </td>
+                          </tr>
+                          <tr class="even pointer">
+                            <td style="text-align: center;border: hidden"  class=""></td>
+                            <td style="text-align: center;border: hidden" class=""></td>
+                            <td style="text-align: right;border: hidden"   width="200px" class="">Costo Total</td>
+                            <td style="text-align: left;border: hidden"   width="100px" class=""><?php echo  $datosProduccion2[0][6]+$res ?></td>
+                          </tr>
+                    </tbody>
+                  </table>  
 
                 </div>
               </div>

@@ -36,6 +36,11 @@ function Export2Doc(element, filename = ''){
     document.body.removeChild(downloadLink);
 }
 
+function generar(){
+    var idPTAprueba=getQueryVariable('idPTA');
+    window.location.href="pdfPTA.php?idPTA="+idPTAprueba;
+}
+
 function verPTA(){
     var idPTAprueba = getQueryVariable('idPTA');
     $("#tablaPlan").load("vcargarTablaPTA.php");

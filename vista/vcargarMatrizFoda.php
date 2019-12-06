@@ -88,7 +88,7 @@
                                                     $cadena=$cadena.'O'.$datos[$j][0];
                                                 }
                                                 else{
-                                                    $cadena=$cadena.'O'.$ddatos[$j][0].',';
+                                                    $cadena=$cadena.'O'.$datos[$j][0].',';
                                                 }
                                                 $cont=$cont+1;
                                             }

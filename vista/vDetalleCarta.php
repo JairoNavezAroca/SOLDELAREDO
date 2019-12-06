@@ -14,7 +14,7 @@
                   <button type="button" class="btn btn-primary detalleOrden" onclick="Export2Doc('imprimir', 'Carta');"><i class="fa fa-file-word-o"></i> Word</button>
                 </div> 
                 <div class="col-md-1 col-sm-2 col-xs-12 has-feedback">
-                  <button type="button" class="btn btn-danger" onclick=""><i class="fa  fa-file-pdf-o"></i> PDF</button>
+                  <button type="button" class="btn btn-danger" onclick="window.location.href='pdfCarta.php?idCarta=<?php echo $_GET['idCarta']?>'"><i class="fa  fa-file-pdf-o"></i> PDF</button>
                 </div> 
                 <div class="clearfix"></div>
               </div>

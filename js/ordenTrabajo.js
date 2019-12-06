@@ -36,6 +36,11 @@ function Export2Doc(element, filename = ''){
     document.body.removeChild(downloadLink);
 }
 
+function generar(){
+    var numeroPrueba = getQueryVariable('numero');
+    window.location.href="pdfOTrab.php?numero="+numeroPrueba;
+}
+
 function verOrdenTrabajo(){
     var numeroPrueba = getQueryVariable('numero');
     $("#tablaOrdenes").load("vcargarTablaOTrabajo.php");

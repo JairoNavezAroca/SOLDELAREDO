@@ -36,6 +36,11 @@ function Export2Doc(element, filename = ''){
     document.body.removeChild(downloadLink);
 }
 
+function generar(){
+    var numeroPrueba = getQueryVariable('numero');
+    window.location.href="pdfProd.php?numero="+numeroPrueba;
+}
+
 function cargar(){
     var numeroPrueba = getQueryVariable('numero');
     $("#tablaProduccion").load("vcargarTablaProduccion.php");

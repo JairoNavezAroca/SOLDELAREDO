@@ -36,7 +36,7 @@ $(document).ready(function(){
     console.log(postData);
     const url = '../controlador/tarea.php';
     $.post(url, postData, (response) => {
-      swal(response);
+      alert(response);
       $('#frmTareas').trigger('reset');
       vertareas();
       edit=false;
@@ -82,7 +82,7 @@ function vertareas() {
       let idtarea = $(element).attr('idtarea');
       let accion = 'eliminar';
       $.post('../controlador/tarea.php', {idtarea,accion},(response) => {
-        swal(response);
+        alert(response);
         vertareas();
       });
     }

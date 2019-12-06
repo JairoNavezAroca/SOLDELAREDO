@@ -1,5 +1,6 @@
-<?php ob_start(); 
-	include("../controlador/cFoda.php");
+<?php  
+  include("../controlador/cFoda.php");
+  ob_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -258,13 +259,11 @@
 </body>
 </html>
 <?php
-require_once '../dompdf/autoload.inc.php';
-use Dompdf\Dompdf;
-$dompdf = new DOMPDF();
-$dompdf->load_html(ob_get_clean());
-$dompdf->render();
-$pdf = $dompdf->output();
-$filename = "MatrizFODA.pdf";
-file_put_contents($filename, $pdf);
-$dompdf->stream($filename);
+$html = ob_get_contents();
+ob_end_clean();
+require_once '../vendor/autoload.php';
+//https://mpdf.github.io/installation-setup/installation-v7-x.html
+$mpdf = new \Mpdf\Mpdf();
+$mpdf->WriteHTML($html);
+$mpdf->Output('MatrizFODA.pdf',"D");
 ?>

@@ -1,4 +1,4 @@
-<?php header("Location: vista/usuario_login.php"); ?>
+<?php header("Location: vista/login.php"); ?>
 <?php
   include("header.php"); 
 ?>

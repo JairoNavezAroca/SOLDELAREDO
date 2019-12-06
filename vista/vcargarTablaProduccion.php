@@ -24,7 +24,7 @@
                         if($datosProduccion){
                           for($i=0;$i<count($datosProduccion);$i++){
                             $codProd=$datosProduccion[$i][7];
-                            $sql="SELECT descripcion FROM producto WHERE codProducto='$codProd';";
+                            $sql="SELECT descripcion FROM Producto WHERE codProducto='$codProd';";
                             $producto=$produccion->query1($sql);
                       ?>
                         <tr class="even pointer" numero="<?php echo $datosProduccion[$i][0]?>">

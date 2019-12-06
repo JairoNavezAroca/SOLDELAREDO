@@ -36,6 +36,11 @@ function Export2Doc(element, filename = ''){
     document.body.removeChild(downloadLink);
 }
 
+function generar(){
+    var idProyectoPrueba = getQueryVariable('idProyecto');
+    window.location.href="pdfProy.php?idProyecto="+idProyectoPrueba;
+}
+
 function verProyecto(){
     var idProyectoPrueba = getQueryVariable('idProyecto');
     $("#actualizar").css('display','none');

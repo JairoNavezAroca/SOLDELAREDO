@@ -63,7 +63,7 @@
  			function ListarCapacitaciones($idarea){
  				abrirConexion();
  			global $conexion;
- 			$sql=mysqli_query($conexion,"SELECT * FROM Capacitaciones where idarea=$idarea ");
+ 			$sql=mysqli_query($conexion,"SELECT * FROM capacitaciones where idarea=$idarea ");
  			return $sql->fetch_all();
 
  			}

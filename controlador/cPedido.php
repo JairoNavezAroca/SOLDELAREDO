@@ -10,6 +10,7 @@
     $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad']:NULL;
     $accion = isset($_POST['accion']) ? $_POST['accion']:NULL;
     $datosPedido = $pedido->seleccionarTodosPedidos();
+    $datosPedido2 = $pedido->seleccionarPedidos($numero1);
     $datosInsumoPed=$pedido->seleccionarTodosInsumoPed($numero1);
     $datosInsumo = $pedido->seleccionarTodosInsumo();
     switch ($accion) {
