@@ -5,4 +5,5 @@
 	$conexion -> set_charset("utf8");
 
 	//rosa es tu mejor amiga xd
+	//-----
 ?>
