@@ -19,10 +19,10 @@
 		                  	<input type="hidden" value="<?php echo $_GET['idtarea'] ?>" id="idtarea">
 
 				            <form id="frmActividad" class="form-horizontal form-label-left">
-				              <div class="form-group">
+				              <div class="form-group"">
 				                   <label class="control-label col-md-4 col-sm-3 col-xs-12">Actividad*</label>
 				                   <div class="col-md-4 col-sm-4 col-xs-12">
-				                     <input type="text" id="actividad" required pattern="^[a-z A-Z]+$" class="form-control col-md-7 col-xs-12">
+				                     <input type="text" id="actividad" required="required" class="form-control col-md-7 col-xs-12">
 				                   </div>
 				              </div>
 				              <input type="hidden" id="idactividad">
@@ -82,6 +82,6 @@
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>   
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
   </body>
 </html>

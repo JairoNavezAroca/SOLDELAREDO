@@ -13,7 +13,7 @@
 		                  	<h2 id="titulo"></h2>
 		                  	<div class="clearfix"></div>
 		                  </div>
- 
+
 		                  <div class="x_content">
 		                  	<input type="hidden" value="<?php echo $_GET['idproceso'] ?>" id="idproceso">
 
@@ -21,13 +21,13 @@
 				              <div class="form-group"">
 				                   <label class="control-label col-md-4 col-sm-3 col-xs-12">Tarea*</label>
 				                   <div class="col-md-4 col-sm-4 col-xs-12">
-				                     <input type="text" id="tarea" required pattern="^[a-z A-Z]+$" class="form-control col-md-7 col-xs-12">
+				                     <input type="text" id="tarea" required="required" class="form-control col-md-7 col-xs-12">
 				                   </div>
 				              </div>
 				              <div class="form-group"">
 				                   <label class="control-label col-md-4 col-sm-3 col-xs-12">Area*</label>
 				                   <div class="col-md-4 col-sm-4 col-xs-12">
-				                     <input type="text" id="area" required pattern="^[a-z A-Z]+$" class="form-control col-md-7 col-xs-12">
+				                     <input type="text" id="area" required="required" class="form-control col-md-7 col-xs-12">
 				                  </div>
 				              </div>
 				              <input type="hidden" id="idtarea">
@@ -83,6 +83,6 @@
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>   
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
   </body>
 </html>
